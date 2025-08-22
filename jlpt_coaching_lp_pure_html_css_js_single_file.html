@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lingo Japanese Coaching — Pass the JLPT with Coaching</title>
+  <meta name="description" content="Pass the JLPT in 6 months with personalized coaching: study plan, weekly sessions, and 24/7 support. Introductory offer $200/month." />
+  <meta property="og:title" content="Lingo Japanese Coaching" />
+  <meta property="og:description" content="Pass the JLPT in 6 months with coaching, not just lessons." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#dc2626" />
+
+  <!-- Inter font (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text: #171717; /* neutral-900 */
+      --muted: #525252; /* neutral-600 */
+      --subtle: #737373; /* neutral-500/700 blend */
+      --border: #e5e5e5; /* neutral-200 */
+      --panel: #ffffff;
+      --soft: #fafafa; /* neutral-50 */
+      --brand: #dc2626; /* red-600 */
+      --brand-700: #b91c1c; /* red-700 */
+      --brand-200: #fecaca; /* red-200 */
+      --radius: 22px; /* 2xl */
+      --shadow: 0 10px 20px rgba(0,0,0,.04), 0 3px 6px rgba(0,0,0,.06);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text); background: var(--bg);
+    }
+
+    /* Layout helpers */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+    .stack-2xl{ padding-top: 72px; padding-bottom: 72px; }
+    @media (min-width:640px){ .stack-2xl{ padding-top: 80px; padding-bottom: 80px; } }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 40; backdrop-filter: saturate(180%) blur(8px);
+      background: rgba(255,255,255,0.7); border-bottom: 1px solid var(--border);
+    }
+    .nav { display: none; gap: 24px; align-items: center; font-size: 14px; }
+    .brand { font-weight: 600; letter-spacing: .02em; }
+    @media (min-width:768px){ .nav{ display: flex; } }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--brand); }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; padding: 12px 18px; border-radius: 999px; background: var(--brand); color: #fff; font-weight: 600; box-shadow: var(--shadow); transition: transform .06s ease, background .2s ease; }
+    .btn:hover{ background: var(--brand-700); transform: translateY(-1px); }
+
+    /* Hero */
+    .hero{ position: relative; text-align: center; overflow: hidden; }
+    .hero::before{ content:""; position:absolute; inset:0; background:
+      radial-gradient(circle at 20% 10%, rgba(220,38,38,.08), transparent 40%),
+      radial-gradient(circle at 80% 30%, rgba(220,38,38,.08), transparent 40%);
+      pointer-events:none; }
+    .hero h1{ margin: 16px 0 0; font-size: 34px; font-weight: 800; letter-spacing: -0.02em; }
+    .hero p.lead{ margin-top: 10px; font-size: 20px; color: #404040; }
+    @media (min-width:640px){ .hero h1{ font-size: 54px; } .hero p.lead{ font-size: 24px; } }
+
+    /* Sections */
+    section.soft{ background: var(--soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    h2{ font-size: 28px; font-weight: 800; margin: 0; }
+    @media (min-width:640px){ h2{ font-size: 32px; } }
+    h3{ font-size: 18px; font-weight: 700; margin: 0; }
+    p{ line-height: 1.6; }
+
+    /* Cards & grids */
+    .card{ background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; }
+    .shadow-sm{ box-shadow: var(--shadow); }
+    .grid{ display: grid; gap: 16px; }
+    @media (min-width:640px){ .grid-sm-2{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+    @media (min-width:768px){ .grid-md-3{ grid-template-columns: repeat(3, minmax(0,1fr)); } .grid-md-5{ grid-template-columns: repeat(5, minmax(0,1fr)); } }
+    @media (min-width:1024px){ .grid-lg-2{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+
+    .muted{ color: var(--muted); }
+    .subtle{ color: #525252; }
+    .accent{ color: var(--brand); }
+    .pill{ display:inline-flex; align-items:center; justify-content:center; width: 32px; height: 32px; border-radius:999px; background: var(--brand); color:#fff; font-weight:700; }
+
+    /* Animations */
+    .fade-up{ opacity:0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-up.appear{ opacity: 1; transform: translateY(0); }
+
+    /* Footer */
+    footer{ border-top: 1px solid var(--border); color: var(--subtle); font-size: 14px; }
+
+    /* Utilities */
+    .center{ text-align:center; }
+    .row{ display:flex; gap: 8px; align-items:center; justify-content:center; }
+    .space-y > * + * { margin-top: 12px; }
+    .mt-6{ margin-top: 24px; }
+    .mt-8{ margin-top: 32px; }
+    .mt-10{ margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container" style="padding:12px 16px; display:flex; align-items:center; justify-content:space-between;">
+      <div class="row" style="gap:8px;">
+        <span class="brand">Lingo Japanese Coaching</span>
+      </div>
+      <nav class="nav">
+        <a href="#why">Why</a>
+        <a href="#coaching">Coaching</a>
+        <a href="#offer">Offer</a>
+        <a href="#how">How it works</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSfgVVe-P_Si6fcs8ltREOCLMhfIvkK7MzO0VMVKTdXSG5vmeg/viewform">Book Free Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero stack-2xl">
+    <div class="container">
+      <h1 class="fade-up">Pass the JLPT with <span class="accent">coaching</span>, not just lessons.</h1>
+      <p class="lead fade-up" style="transition-delay:.05s">Pass the JLPT in 6 months.</p>
+
+      <div class="center fade-up" style="transition-delay:.1s">
+        <div class="row mt-8">
+          <a class="btn" target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSfgVVe-P_Si6fcs8ltREOCLMhfIvkK7MzO0VMVKTdXSG5vmeg/viewform">
+            <span class="icon" data-lucide="sparkles" style="width:20px;height:20px;margin-right:8px"></span>
+            Book Your Free Consultation
+          </a>
+        </div>
+        <p class="muted" style="font-size:14px; margin-top:12px; display:flex; align-items:center; justify-content:center; gap:6px;">
+          <span class="icon" data-lucide="clock" style="width:16px;height:16px"></span>
+          24/7 questions & support — you’re never alone.
+        </p>
+      </div>
+
+      <!--
+        Optional: Drop a promo video here later.
+        Replace the placeholder below with your embed, e.g. YouTube iframe.
+        <div class="mt-10 center">
+          <div style="position:relative; padding-top:56.25%; border-radius:16px; overflow:hidden; box-shadow:var(--shadow);">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Promo" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0"></iframe>
+          </div>
+        </div>
+      -->
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section id="why" class="soft stack-2xl">
+    <div class="container">
+      <h2>Why Most Learners Fail the JLPT</h2>
+      <div class="grid grid-sm-2 grid-md-3 mt-6">
+        <div class="card row" style="justify-content: flex-start; gap:12px;">
+          <span class="icon accent" data-lucide="check" style="width:20px;height:20px"></span>
+          <p class="subtle">Relying only on teaching lessons without strategy</p>
+        </div>
+        <div class="card row" style="justify-content: flex-start; gap:12px;">
+          <span class="icon accent" data-lucide="check" style="width:20px;height:20px"></span>
+          <p class="subtle">Studying vocabulary without application</p>
+        </div>
+        <div class="card row" style="justify-content: flex-start; gap:12px;">
+          <span class="icon accent" data-lucide="check" style="width:20px;height:20px"></span>
+          <p class="subtle">Losing motivation after a few months</p>
+        </div>
+      </div>
+
+      <div class="card mt-8" style="border-color: var(--brand-200)">
+        <p class="subtle" style="font-weight:600">With our coaching, you’ll never be alone — you can reach out <span style="color:#991b1b; font-weight:800">24/7</span> for questions and support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaching -->
+  <section id="coaching" class="stack-2xl">
+    <div class="container">
+      <h2>Coaching, Not Just Teaching</h2>
+      <div class="grid grid-md-3 mt-8">
+        <div class="card">
+          <div class="accent"><span class="icon" data-lucide="user-check" style="width:24px;height:24px"></span></div>
+          <h3 style="margin-top:12px">A companion in your journey</h3>
+          <p class="subtle">Your coach becomes a life companion who walks alongside you.</p>
+        </div>
+        <div class="card">
+          <div class="accent"><span class="icon" data-lucide="target" style="width:24px;height:24px"></span></div>
+          <h3 style="margin-top:12px">Personalized study plan</h3>
+          <p class="subtle">A plan tailored to your JLPT goals, level, and schedule.</p>
+        </div>
+        <div class="card">
+          <div class="accent"><span class="icon" data-lucide="message-circle" style="width:24px;height:24px"></span></div>
+          <h3 style="margin-top:12px">24/7 Q&A support</h3>
+          <p class="subtle">Ask anytime and get guidance when you need it most.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer / Pricing -->
+  <section id="offer" class="soft stack-2xl">
+    <div class="container">
+      <h2>Introductory Offer — Limited Time</h2>
+      <div class="grid grid-lg-2 mt-8" style="align-items:flex-start; gap: 24px;">
+        <div class="card">
+          <p class="muted" style="font-size:14px">Regular price</p>
+          <p style="font-size: 34px; font-weight: 800; text-decoration: line-through;">$600<span style="font-size:16px; font-weight:600">/month</span></p>
+          <p class="muted" style="font-size:14px; margin-top:6px">Early students only</p>
+          <p style="margin-top:4px; font-size:40px; font-weight: 800; color: var(--brand);">$200<span style="font-size:16px; font-weight:600; color:var(--text)">/month</span></p>
+          <a class="btn" style="margin-top:16px" target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSfgVVe-P_Si6fcs8ltREOCLMhfIvkK7MzO0VMVKTdXSG5vmeg/viewform">Book Free Consultation</a>
+        </div>
+        <div>
+          <h3>Why $600 is the real value</h3>
+          <ul class="space-y" style="list-style: none; padding:0; margin-top:12px;">
+            <li class="row" style="justify-content:flex-start; gap:12px"><span class="icon accent" data-lucide="check" style="width:20px;height:20px"></span><span class="subtle">24/7 personal support whenever you need</span></li>
+            <li class="row" style="justify-content:flex-start; gap:12px"><span class="icon accent" data-lucide="check" style="width:20px;height:20px"></span><span class="subtle">Personalized learning plan for your goals</span></li>
+            <li class="row" style="justify-content:flex-start; gap:12px"><span class="icon accent" data-lucide="check" style="width:20px;height:20px"></span><span class="subtle">Guidance from an experienced education professional</span></li>
+            <li class="row" style="justify-content:flex-start; gap:12px"><span class="icon accent" data-lucide="check" style="width:20px;height:20px"></span><span class="subtle">Not just lessons, but a mentor who walks alongside you</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="stack-2xl">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="grid grid-md-5 mt-8">
+        <div class="card">
+          <div class="pill">1</div>
+          <h3 style="margin-top:12px">Apply online</h3>
+        </div>
+        <div class="card">
+          <div class="pill">2</div>
+          <h3 style="margin-top:12px">Free consultation & plan</h3>
+        </div>
+        <div class="card">
+          <div class="pill">3</div>
+          <h3 style="margin-top:12px">Weekly coaching & feedback</h3>
+        </div>
+        <div class="card">
+          <div class="pill">4</div>
+          <h3 style="margin-top:12px">Daily habit & ask anytime</h3>
+          <p class="subtle" style="font-size:14px">Build a study habit and ask questions whenever you want.</p>
+        </div>
+        <div class="card">
+          <div class="pill">5</div>
+          <h3 style="margin-top:12px">Achieve JLPT success</h3>
+          <p class="subtle" style="font-size:14px">Habitual study & support in Japanese when you need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social proof -->
+  <section class="soft stack-2xl">
+    <div class="container">
+      <h2>Trusted by motivated learners worldwide</h2>
+      <div class="grid grid-sm-2 mt-8">
+        <div class="card">
+          <p style="font-style: italic">“I never thought I could keep studying Japanese every day. The coaching made it possible!”</p>
+          <p class="muted" style="margin-top:12px; font-size:14px">— Student A</p>
+        </div>
+        <div class="card">
+          <p style="font-style: italic">“Having a coach by my side changed everything. I passed JLPT N3 in 6 months.”</p>
+          <p class="muted" style="margin-top:12px; font-size:14px">— Student B</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="stack-2xl" style="position:relative;">
+    <div aria-hidden="true" style="position:absolute; inset:0; background: radial-gradient(circle at 50% -10%, rgba(220,38,38,.08), transparent 50%);"></div>
+    <div class="container" style="position:relative;">
+      <div class="card center">
+        <h3 style="font-size:28px; font-weight:800">Pass the JLPT in 6 months with coaching.</h3>
+        <p class="subtle" style="margin-top:8px">Start with a free consultation today. Limited offer: $200/month.</p>
+        <a class="btn" style="margin-top:16px" target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSfgVVe-P_Si6fcs8ltREOCLMhfIvkK7MzO0VMVKTdXSG5vmeg/viewform">Book Your Free Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding: 36px 16px; display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+      <p>© <span id="year"></span> Lingo Japanese Coaching. All rights reserved.</p>
+      <p>24/7 Support · Early Students Only · Introductory Offer</p>
+    </div>
+  </footer>
+
+  <!-- Icons via Lucide (tiny, no framework) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    // Replace [data-lucide] with inline SVGs
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) { window.lucide.createIcons(); }
+      // Year
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+      // Fade-up on scroll (simple AOS replacement)
+      const els = document.querySelectorAll('.fade-up, .card, h2');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('appear'); io.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      els.forEach(el => { el.classList.add('fade-up'); io.observe(el); });
+    });
+  </script>
+</body>
+</html>
